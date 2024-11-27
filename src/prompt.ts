@@ -178,7 +178,7 @@ function addDetectorsToRegistry (): void {
 addDetectorsToRegistry()
 
 function extractPromptText (textarea: HTMLTextAreaElement | null): string {
-  const promptText: string | undefined = textarea?.value
+  const promptText: string | undefined = textarea?.innerText
   return promptText ?? ''
 }
 

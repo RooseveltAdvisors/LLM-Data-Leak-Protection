@@ -19,8 +19,7 @@ async function fetchDomElements (): Promise<PromptElements> {
   const textarea: HTMLTextAreaElement | null = document.getElementById(
     'prompt-textarea'
   ) as HTMLTextAreaElement | null
-  const button: HTMLButtonElement | null =
-    textarea?.parentElement?.parentElement?.querySelector(':scope > button') ?? null
+  const button: HTMLButtonElement | null = document.querySelector('button[aria-label="Send prompt"]') as HTMLButtonElement | null;
 
   if (textarea !== null && button !== null) {
     return { textarea, button }
